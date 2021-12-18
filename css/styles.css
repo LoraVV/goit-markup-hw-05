@@ -7,6 +7,7 @@
     --secondary-bgc: #F5F4FA;
     --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     --contract-color: rgba(255, 255, 255, 0.6);
+    --animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -90,10 +91,6 @@ ul {
     color: var(--accent-color);
 }
 
-.nav-link.active {
-    color: var(--accent-color);
-}
-
 
 /* ===========Навигация сайта=========== */
 
@@ -128,6 +125,47 @@ ul {
     letter-spacing: 0.02em;
     text-decoration: none;
     color: var(--title-text-color);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 0 2px;
+    background-color: var(--accent-color);
+    /* opacity: 0; */
+    transform: scale(0);
+    transition: transform 250ms var(--animation-timing-function);
+}
+
+.nav-link:hover::after {
+    /* opacity: 1; */
+    transform: scale(1);
+}
+
+.nav-link.active {
+    color: var(--accent-color);
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 0 2px;
+    background-color: var(--accent-color);
+    transform: scale(1);
 }
 
 .contacts {
@@ -637,6 +675,10 @@ ul {
     margin-right: 30px;
 }
 
+.project-item:hover .project-description-text {
+    transform: translateY(0);
+}
+
 .project-link {
     text-decoration: none;
 }
@@ -645,6 +687,35 @@ ul {
 .project-link:focus {
     display: block;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.project-description {
+    overflow: hidden;
+    position: relative;
+}
+
+.project-description-text {
+    display: inline-block;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+    /* opacity: 0; */
+    transform: translateY(100%);
+    transition: transform 250ms var(--animation-timing-function);
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--primary-white-color);
+}
+
+.project-description:hover {
+    /* opacity: 1; */
+    transform: translateY(0);
 }
 
 .project-item:nth-child(3n) {
