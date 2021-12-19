@@ -704,9 +704,8 @@ ul {
     height: 100%;
     padding: 63px 24px;
     background-color: rgba(33, 150, 243, 0.9);
-    /* opacity: 0; */
     transform: translateY(100%);
-    transition: transform 250ms var(--animation-timing-function);
+    transition: transform 250ms var(--animation-timing-function) 250ms;
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
@@ -714,7 +713,6 @@ ul {
 }
 
 .project-description:hover {
-    /* opacity: 1; */
     transform: translateY(0);
 }
 
