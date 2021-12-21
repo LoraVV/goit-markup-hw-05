@@ -204,6 +204,7 @@ ul {
 .contacts-link:hover,
 .contacts-link:focus {
     color: var(--accent-color);
+    transition: transform 250ms var(--animation-timing-function);
 }
 
 .contacts-link:hover .contacts-icon,
@@ -271,7 +272,9 @@ ul {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     opacity: 1;
-    transition: opacity 250ms var(--animation-timing-function);
+    /* visibility: visible; */
+    transition: opacity 250ms var(--animation-timing-function), visibility 250ms var(--animation-timing-function);
+    /* z-index: 1; */
 }
 
 
@@ -280,23 +283,23 @@ ul {
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+    /* visibility: hidden; */
 }
 
 
 /* когда скрыта */
 
 .backdrop.is-hidden .modal {
-    transform: scale(0.9);
-    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
+    /* opacity: 1; */
     transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    transition: transform 250ms var(--animation-timing-function), opacity 250ms var(--animation-timing-function);
+    transition: transform 250ms var(--animation-timing-function);
     min-height: 581px;
     min-width: 528px;
     padding: 15px;
@@ -306,9 +309,11 @@ ul {
 }
 
 .modal-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     color: #000000;
     background: var(--primary-white-color);
@@ -448,6 +453,39 @@ ul {
     padding-bottom: 0;
 }
 
+.work-list {
+    position: relative;
+}
+
+.work-imgdiv {
+    position: relative;
+}
+
+.work-textdiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 370px;
+    background: rgba(47, 48, 58, 0.8);
+}
+
+.work-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    color: var(--primary-white-color);
+    text-transform: uppercase;
+}
+
 
 /* ===========Команда=========== */
 
@@ -555,6 +593,7 @@ ul {
     box-sizing: border-box;
     border-radius: 4px;
     color: #AFB1B8;
+    transition: color 250ms var(--animation-timing-function), border-color 250ms var(--animation-timing-function);
 }
 
 .link-client:hover,
