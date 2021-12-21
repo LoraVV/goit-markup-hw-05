@@ -320,6 +320,7 @@ ul {
     color: #000000;
     background: var(--primary-white-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 
@@ -455,31 +456,21 @@ ul {
     padding-bottom: 0;
 }
 
-.work-list {
+.work-item {
     position: relative;
-}
-
-.work-imgdiv {
-    position: relative;
-}
-
-.work-textdiv {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 0;
-    height: 70px;
-    width: 370px;
-    background: rgba(47, 48, 58, 0.8);
 }
 
 .work-text {
     display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background: rgba(47, 48, 58, 0.8);
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -554,7 +545,6 @@ ul {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
     transition: color 250ms var(--animation-timing-function), background-color 250ms var(--animation-timing-function);
-    ;
 }
 
 .icon-team-item:not(:last-child) {
