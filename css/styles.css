@@ -146,7 +146,8 @@ ul {
     transition: transform 250ms var(--animation-timing-function);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link:focus::after {
     /* opacity: 1; */
     transform: scale(1);
 }
@@ -159,7 +160,7 @@ ul {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -1px;
     display: block;
     width: 100%;
     height: 4px;
@@ -194,6 +195,7 @@ ul {
 
 .contacts-link {
     color: var(--primary-text-color);
+    transition: color 250ms var(--animation-timing-function), fill 250ms var(--animation-timing-function);
 }
 
 .nav-item:not(:last-child),
@@ -204,13 +206,11 @@ ul {
 .contacts-link:hover,
 .contacts-link:focus {
     color: var(--accent-color);
-    transition: color 250ms var(--animation-timing-function);
 }
 
 .contacts-link:hover .contacts-icon,
 .contacts-link:focus .contacts-icon {
     fill: var(--accent-color);
-    transition: fill 250ms var(--animation-timing-function);
 }
 
 
@@ -257,13 +257,13 @@ ul {
     line-height: 1.88;
     text-decoration: none;
     letter-spacing: 0.06em;
+    transition: background-color 250ms var(--animation-timing-function);
 }
 
 .button-hero:hover,
 .button-hero:focus {
     cursor: pointer;
     background-color: #1b71b8;
-    transition: background-color 250ms var(--animation-timing-function);
 }
 
 .backdrop {
@@ -538,13 +538,13 @@ ul {
     height: 44px;
     border-radius: 50%;
     color: #AFB1B8;
+    transition: color 250ms var(--animation-timing-function), background-color 250ms var(--animation-timing-function);
 }
 
 .social-link:hover,
 .social-link:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
-    transition: color 250ms var(--animation-timing-function), background-color 250ms var(--animation-timing-function);
 }
 
 .icon-team-item:not(:last-child) {
@@ -594,7 +594,6 @@ ul {
 .link-client:focus {
     color: var(--accent-color);
     border-color: var(--accent-color);
-    transition: color 250ms var(--animation-timing-function), border-color 250ms var(--animation-timing-function);
 }
 
 .icon-client {
@@ -680,13 +679,13 @@ ul {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     color: var(--primary-white-color);
+    transition: background-color 250ms var(--animation-timing-function);
 }
 
 .footer-link:hover,
 .footer-link:focus {
     cursor: pointer;
     background-color: var(--accent-color);
-    transition: background-color 250ms var(--animation-timing-function);
 }
 
 .icon-footer-item:not(:last-child) {
@@ -723,6 +722,7 @@ ul {
     border: transparent;
     color: var(--title-text-color);
     background-color: var(--secondary-bgc);
+    transition: color 250ms var(--animation-timing-function), background-color 250ms var(--animation-timing-function), box-shadow 250ms var(--animation-timing-function);
 }
 
 .button-links:hover,
@@ -731,7 +731,6 @@ ul {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    transition: color 250ms var(--animation-timing-function), background-color 250ms var(--animation-timing-function);
 }
 
 
@@ -763,12 +762,14 @@ ul {
     margin-right: 30px;
 }
 
-.project-item:hover .project-description-text {
+.project-item:hover .project-description-text,
+.project-item:focus .project-description-text {
     transform: translateY(0);
 }
 
 .project-link {
     text-decoration: none;
+    transition: box-shadow 250ms var(--animation-timing-function);
 }
 
 .project-link:hover,
@@ -800,7 +801,8 @@ ul {
     color: var(--primary-white-color);
 }
 
-.project-description:hover {
+.project-description:hover,
+.project-description:focus {
     transform: translateY(0);
 }
 
